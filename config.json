@@ -1,0 +1,12 @@
+{
+    "bot_token": "TOKEN",
+    "setup_channel": "CHANNEL WHERE YOU WANT TO SETUP BOT",
+    "twittycord_key": "XYZWKMNOD",
+    "mysql_creds": {
+        "host": "localhost",
+        "user": "owlski",
+        "password": "heythere",
+        "database": "accountant",
+        "port": "3306"
+    }
+}
