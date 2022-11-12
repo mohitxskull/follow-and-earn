@@ -1,4 +1,3 @@
-const { findTwittyUser } = require("../../functions/misc")
 const { Interaction, MessageEmbed, MessageActionRow, MessageButton, Client } = require("discord.js")
 
 /**
@@ -14,7 +13,7 @@ module.exports = async (interaction, client=interaction.client) => {
     interaction.message.delete()
 
     const targetEmbed = new MessageEmbed()
-        .setDescription(`Please check your twitter notification and confirm if **[${userQueueTask.user.twitter}](https://twitter.com/${userQueueTask.user.twitter})** followed you or not! On confirmation, you will recive reward points.`)
+        .setDescription(`Please check your twitter notification and confirm if this **[twitter account](https://twitter.com/intent/user?user_id=${userQueueTask.user.twitter})** followed you or not! On confirmation, you will recive reward points.`)
         .setColor("RED")
 
     const targetRow = new MessageActionRow()
