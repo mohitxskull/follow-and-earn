@@ -38,8 +38,16 @@ async function checkMainChannel(client) {
 async function findMatchForFollow(userId, queue, pool) {
   // Returns list of users whose discord and twitter connected
   const UsersList = await NearcordUsers.find({
+<<<<<<< HEAD
+    $and: [
+      { 'social.discord': { $ne: null } },
+      { 'social.discord': { $ne: userId } },
+    ],
+    'social.twitter': { $ne: null },
+=======
     'social.twitter': { $ne: null },
     'social.discord': { $ne: null },
+>>>>>>> afdb49a5ef806ad924f61be823d42d366ff88968
   }).toArray();
 
   const [oldFollowers] = await listFollowers(userId, pool);
@@ -47,7 +55,10 @@ async function findMatchForFollow(userId, queue, pool) {
   const users = (UsersList || []).filter((data) => {
     const twitter = data.social.twitter;
     if (
+<<<<<<< HEAD
+=======
       data.social.discord === userId ||
+>>>>>>> afdb49a5ef806ad924f61be823d42d366ff88968
       oldFollowers.some((x) => x.target_twitter === twitter) ||
       queue.some((x) => x.target.twitter === twitter)
     ) {
